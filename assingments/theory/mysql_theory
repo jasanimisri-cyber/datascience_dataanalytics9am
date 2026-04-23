@@ -1,0 +1,97 @@
+ # WHAT IS JOIN IN MYSQL ?
+   
+1. Sql join are used to join more than one tables itself with common field.
+2. Sql join are used to join tables with match data one tables to another tables.
+
+
+#  DDL ( DATA DEFINATION LANGUAGE ) :
+
+ These commands are used to define and manage the structure of a database, including creating, altering, and dropping tables and other database objects.
+ 
+  Examples include CREATE, ALTER, and DROP , RENAME , TRUNCATE.
+
+** LIST of COMMANDS in DDL **
+
+```
+   create database databasename; 
+      or
+   create database flip_cart ;     
+
+```
+
+# DML ( DATA MANIPULATIVE LANGUAGE ) :
+
+1. These commands are used to manipulate the data within a # name of all databases
+2. DML stands for Data Manipulation Language.
+3. DML commands are used to insert data into tables, deleted data from tables , update data from tables.
+
+ **INSERT**  
+ Used to insert data into tables how to insert single record in a table
+insert into students (id, name, age, grade) values (1, 'John Doe', 20, 'A');
+how to insert multiple record in a table.
+
+insert into students (id, name, age, grade) values 
+(2, 'Jane Smith', 22, 'B'),
+(3, 'Michael Johnson', 19, 'A'),
+(4, 'Emily Davis', 21, 'C');
+
+or
+
+insert into shop_state(sname,added_date) values
+('uttar pradesh','07/04/2026'),
+('mahrastra','07/04/2026'),
+('madhya pradesh','07/04/2026');
+
+**DELETE** 
+Used to delete data from tables single data delete or all table data delete and particular column data delete.
+
+1. delete all data from table 
+delete from shop_state;
+
+2. delete from shop_state where sid=3;
+
+3. delete from shop_state where sid in(1,3);
+
+4. delete from shop_state where sid between 50 and 1000;    
+
+
+**UPDATE**
+Used to update data from tables.
+
+update shop_state set sname='rajsthan' where sid=4;
+or
+update shop_state set sname='rajsthan', added_date='09/04/2026' where sid=4;
+or
+update shop_contactus set name='aryan',email='aryan007@gmail.com',phone=6534587898,comment='hey i am atyan' where id=1;
+
+
+# COMMON TYPES OF JOINS :
+
+1. join
+2. inner join
+3. outer join
+    left join
+    Right join 
+    full join
+4. cross join
+
+
+# TCL : trasanction control language :
+
+    1. TCL is used to transactional control language
+   2.  TCL commit data (save after delete )
+    3.TCL rollback data (after delete we rollback data)
+
+  **Note : TCL only support in oracle database its not supted by sqllite or musql
+how to save data or commit data**
+
+ START TRANSACTION;
+ delete from country where cid=4;
+ commit;
+
+how to rollback data using TCL
+
+START TRANSACTION;
+select * from country where cid=3;
+rollback;
+
